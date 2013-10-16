@@ -1,16 +1,14 @@
 ---
-layout: default
-group: navigation
-title: Terriscope - Professional MapServer Support and Development
+title: Main
+layout: main
 ---
 
-<!--
-{% for post in site.posts limit:10 %}
-<h1 class="post-title">
-	<a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
-	<div class="post-title-sub">
-		{{ post.date | date_to_long_string }}
-	</div>
-</h1>
-{% endfor %}
--->
+{% include main/content/home.html %}
+
+{% include main/content/services.html %}
+
+{% include main/content/articles.html %}
+
+{% include main/content/about.html %}
+
+{% include main/content/contact.html %}

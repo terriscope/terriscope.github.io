@@ -1,0 +1,43 @@
+<div id="breadcrumbs">
+
+<ul class="breadcrumb">
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a href="{{ site.url }}" itemprop="url">
+            <span itemprop="title">Home</span>
+        </a>
+    </li>
+  {% comment %} check if blog home page {% endcomment %}
+  {% if page.title == "Blog" %}
+    <li class="active" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span itemprop="title">Blog</span>
+    </li>
+  {% else %}
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a href="{{ site.blog }}" itemprop="url">
+            <span itemprop="title">Blog</span>
+        </a>
+    </li>
+    {% comment %} check if category page {% endcomment %}
+    {% if page.title contains "Category: " %}
+      <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+          <a href="{{ site.blog_categories }}" itemprop="url">
+              <span itemprop="title">Categories</span>
+          </a>
+      </li>
+    {% comment %} normal page {% endcomment %}
+    {% else %}
+      {% for category in page.categories %}
+        <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a href="{{ site.blog }}/{{ category }}" itemprop="url">
+                <span itemprop="title">{{ category | capitalize }}</span>
+            </a>
+        </li>
+      {% endfor %}
+    {% endif %}
+    <li class="active" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span itemprop="title">{{ page.title | remove_first: "Category: " }}</span>
+    </li>
+  {% endif %}  
+</ul>
+
+</div>

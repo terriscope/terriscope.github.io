@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ site.name }}</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
+    
+    <link href="/assets/css/terriscope.css" rel="stylesheet" media="screen">
+    <link rel="shortcut icon" href="/images/logo_carre.jpg">
+    
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="header" class="container no-bottom">
+        <div class="row">
+        <div class="col-md-3">
+            <p class="logo text-center">
+                <a href="{{ site.url }}" class="link-back"><img src="/images/logo-terriscope-txt-263.png" alt="{{ site.description }}"/></a>
+            </p>
+            <!--
+            <p class="media-links text-center">
+                {% include media-links.html %}
+            </p>
+            -->
+        </div>
+        <div class="col-md-9">
+           <h2 class="lead text-center">Professional <a href="http://www.mapserver.org">MapServer</a> Support and Development</h2>
+        </div>
+        </div>
+    </div>
+    
+    <!-- BODY -->
+    <div class="container push-top">
+        <div class="row">
+        
+            <!-- navlist -->
+            <div class="col-md-3">
+                {% include main/navbar.html %}
+            </div>
+            
+            <!-- content -->
+            <div id="content" class="col-md-9 col-lg-8 push-top">
